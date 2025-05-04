@@ -1,4 +1,5 @@
-// +build
+//go:build ignore
+// +build ignore
 
 package main
 
@@ -6,8 +7,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/paypal/gatt"
-	"github.com/paypal/gatt/examples/option"
+	"github.com/solidco2/gatt"
+	"github.com/solidco2/gatt/examples/option"
 )
 
 func onStateChanged(d gatt.Device, s gatt.State) {

@@ -1,4 +1,5 @@
-// +build
+//go:build ignore
+// +build ignore
 
 package main
 
@@ -9,9 +10,9 @@ import (
 	"log"
 	"time"
 
-	"github.com/paypal/gatt"
-	"github.com/paypal/gatt/examples/service"
-	"github.com/paypal/gatt/linux/cmd"
+	"github.com/solidco2/gatt"
+	"github.com/solidco2/gatt/examples/service"
+	"github.com/solidco2/gatt/linux/cmd"
 )
 
 // server_lnx implements a GATT server.

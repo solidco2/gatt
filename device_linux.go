@@ -4,8 +4,8 @@ import (
 	"encoding/binary"
 	"net"
 
-	"github.com/paypal/gatt/linux"
-	"github.com/paypal/gatt/linux/cmd"
+	"github.com/solidco2/gatt/linux"
+	"github.com/solidco2/gatt/linux/cmd"
 )
 
 type device struct {
