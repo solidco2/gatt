@@ -24,12 +24,20 @@ var knownServices = map[string]struct{ Name, Type string }{
 	"1815": {Name: "Cycling Speed and Cadence", Type: "org.bluetooth.service.cycling_speed_and_cadence"},
 }
 
+func RegisterService(uuid string, name string, tp string) {
+	knownServices[uuid] = struct{ Name, Type string }{Name: name, Type: tp}
+}
+
 // A dictionary of known descriptor names and type (keyed by attribute uuid)
 var knownAttributes = map[string]struct{ Name, Type string }{
 	"2800": {Name: "Primary Service", Type: "org.bluetooth.attribute.gatt.primary_service_declaration"},
 	"2801": {Name: "Secondary Service", Type: "org.bluetooth.attribute.gatt.secondary_service_declaration"},
 	"2802": {Name: "Include", Type: "org.bluetooth.attribute.gatt.include_declaration"},
 	"2803": {Name: "Characteristic", Type: "org.bluetooth.attribute.gatt.characteristic_declaration"},
+}
+
+func RegisterAttribute(uuid string, name string, tp string) {
+	knownAttributes[uuid] = struct{ Name, Type string }{Name: name, Type: tp}
 }
 
 // A dictionary of known descriptor names and type (keyed by descriptor uuid)
@@ -43,6 +51,10 @@ var knownDescriptors = map[string]struct{ Name, Type string }{
 	"2906": {Name: "Valid Range", Type: "org.bluetooth.descriptor.valid_range"},
 	"2907": {Name: "External Report Reference", Type: "org.bluetooth.descriptor.external_report_reference"},
 	"2908": {Name: "Report Reference", Type: "org.bluetooth.descriptor.report_reference"},
+}
+
+func RegisterDescriptor(uuid string, name string, tp string) {
+	knownDescriptors[uuid] = struct{ Name, Type string }{Name: name, Type: tp}
 }
 
 // A dictionary of known characteristic names and type (keyed by characteristic uuid)
@@ -119,4 +131,8 @@ var knownCharacteristics = map[string]struct{ Name, Type string }{
 	"2a5b": {Name: "CSC Measurement", Type: "org.bluetooth.characteristic.csc_measurement"},
 	"2a5c": {Name: "CSC Feature", Type: "org.bluetooth.characteristic.csc_feature"},
 	"2a5d": {Name: "Sensor Location", Type: "org.bluetooth.characteristic.sensor_location"},
+}
+
+func RegisterCharacteristic(uuid string, name string, tp string) {
+	knownCharacteristics[uuid] = struct{ Name, Type string }{Name: name, Type: tp}
 }
